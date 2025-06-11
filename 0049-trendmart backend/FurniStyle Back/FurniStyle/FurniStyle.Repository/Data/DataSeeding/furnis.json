@@ -1,0 +1,542 @@
+[
+    {        
+        "Name": "Wooden Dining Chair 1",
+        "Description": "A high-quality wooden dining chair with a stylish design.",
+        "Price": 50.0,
+        "StockQuantity": 10,
+        "PictureUrl": "/images/furnis/product_1.jpg",
+        "CategoryId": 1,
+        "RoomId": 1
+    },
+    {        
+        "Name": "Ergonomic Office Chair 2",
+        "Description": "A high-quality ergonomic office chair with a stylish design.",
+        "Price": 75.5,
+        "StockQuantity": 11,
+        "PictureUrl": "/images/furnis/product_2.jpg",
+        "CategoryId": 2,
+        "RoomId": 2
+    },
+    {        
+        "Name": "Modern Lounge Chair 3",
+        "Description": "A high-quality modern lounge chair with a stylish design.",
+        "Price": 101.0,
+        "StockQuantity": 12,
+        "PictureUrl": "/images/furnis/product_3.jpg",
+        "CategoryId": 3,
+        "RoomId": 3
+    },
+    {        
+        "Name": "Classic Armchair 4",
+        "Description": "A high-quality classic armchair with a stylish design.",
+        "Price": 126.5,
+        "StockQuantity": 13,
+        "PictureUrl": "/images/furnis/product_4.jpg",
+        "CategoryId": 4,
+        "RoomId": 4
+    },
+    {        
+        "Name": "Folding Chair 5",
+        "Description": "A high-quality folding chair with a stylish design.",
+        "Price": 152.0,
+        "StockQuantity": 14,
+        "PictureUrl": "/images/furnis/product_5.jpg",
+        "CategoryId": 5,
+        "RoomId": 1
+    },
+    {        
+        "Name": "Luxury Leather Sofa 6",
+        "Description": "A high-quality luxury leather sofa with a stylish design.",
+        "Price": 177.5,
+        "StockQuantity": 15,
+        "PictureUrl": "/images/furnis/product_6.jpg",
+        "CategoryId": 6,
+        "RoomId": 2
+    },
+    {        
+        "Name": "Fabric Recliner Sofa 7",
+        "Description": "A high-quality fabric recliner sofa with a stylish design.",
+        "Price": 203.0,
+        "StockQuantity": 16,
+        "PictureUrl": "/images/furnis/product_7.jpg",
+        "CategoryId": 1,
+        "RoomId": 3
+    },
+    {        
+        "Name": "Modern Sectional Sofa 8",
+        "Description": "A high-quality modern sectional sofa with a stylish design.",
+        "Price": 228.5,
+        "StockQuantity": 17,
+        "PictureUrl": "/images/furnis/product_8.jpg",
+        "CategoryId": 2,
+        "RoomId": 4
+    },
+    {        
+        "Name": "Convertible Sofa Bed 9",
+        "Description": "A high-quality convertible sofa bed with a stylish design.",
+        "Price": 254.0,
+        "StockQuantity": 18,
+        "PictureUrl": "/images/furnis/product_9.jpg",
+        "CategoryId": 3,
+        "RoomId": 1
+    },
+    {        
+        "Name": "Velvet Sofa 10",
+        "Description": "A high-quality velvet sofa with a stylish design.",
+        "Price": 279.5,
+        "StockQuantity": 19,
+        "PictureUrl": "/images/furnis/product_10.jpg",
+        "CategoryId": 4,
+        "RoomId": 2
+    },
+    {        
+        "Name": "Round Coffee Table 11",
+        "Description": "A high-quality round coffee table with a stylish design.",
+        "Price": 50.0,
+        "StockQuantity": 20,
+        "PictureUrl": "/images/furnis/product_11.jpg",
+        "CategoryId": 5,
+        "RoomId": 3
+    },
+    {        
+        "Name": "Wooden Dining Table 12",
+        "Description": "A high-quality wooden dining table with a stylish design.",
+        "Price": 75.5,
+        "StockQuantity": 21,
+        "PictureUrl": "/images/furnis/product_12.jpg",
+        "CategoryId": 6,
+        "RoomId": 4
+    },
+    {        
+        "Name": "Glass Top Table 13",
+        "Description": "A high-quality glass top table with a stylish design.",
+        "Price": 101.0,
+        "StockQuantity": 22,
+        "PictureUrl": "/images/furnis/product_13.jpg",
+        "CategoryId": 1,
+        "RoomId": 1
+    },
+    {        
+        "Name": "Foldable Study Table 14",
+        "Description": "A high-quality foldable study table with a stylish design.",
+        "Price": 126.5,
+        "StockQuantity": 23,
+        "PictureUrl": "/images/furnis/product_14.jpg",
+        "CategoryId": 2,
+        "RoomId": 2
+    },
+    {        
+        "Name": "Marble Office Table 15",
+        "Description": "A high-quality marble office table with a stylish design.",
+        "Price": 152.0,
+        "StockQuantity": 24,
+        "PictureUrl": "/images/furnis/product_15.jpg",
+        "CategoryId": 3,
+        "RoomId": 3
+    },
+    {        
+        "Name": "Queen Size Bed 16",
+        "Description": "A high-quality queen size bed with a stylish design.",
+        "Price": 177.5,
+        "StockQuantity": 25,
+        "PictureUrl": "/images/furnis/product_16.jpg",
+        "CategoryId": 4,
+        "RoomId": 4
+    },
+    {        
+        "Name": "King Size Wooden Bed 17",
+        "Description": "A high-quality king size wooden bed with a stylish design.",
+        "Price": 203.0,
+        "StockQuantity": 26,
+        "PictureUrl": "/images/furnis/product_17.jpg",
+        "CategoryId": 5,
+        "RoomId": 1
+    },
+    {        
+        "Name": "Single Metal Bed 18",
+        "Description": "A high-quality single metal bed with a stylish design.",
+        "Price": 228.5,
+        "StockQuantity": 27,
+        "PictureUrl": "/images/furnis/product_18.jpg",
+        "CategoryId": 6,
+        "RoomId": 2
+    },
+    {        
+        "Name": "Bunk Bed 19",
+        "Description": "A high-quality bunk bed with a stylish design.",
+        "Price": 254.0,
+        "StockQuantity": 28,
+        "PictureUrl": "/images/furnis/product_19.jpg",
+        "CategoryId": 1,
+        "RoomId": 3
+    },
+    {        
+        "Name": "Sofa Bed 20",
+        "Description": "A high-quality sofa bed with a stylish design.",
+        "Price": 279.5,
+        "StockQuantity": 29,
+        "PictureUrl": "/images/furnis/product_20.jpg",
+        "CategoryId": 2,
+        "RoomId": 4
+    },
+    {        
+        "Name": "Kitchen Cabinet 21",
+        "Description": "A high-quality kitchen cabinet with a stylish design.",
+        "Price": 50.0,
+        "StockQuantity": 10,
+        "PictureUrl": "/images/furnis/product_21.jpg",
+        "CategoryId": 3,
+        "RoomId": 1
+    },
+    {        
+        "Name": "Wardrobe Cabinet 22",
+        "Description": "A high-quality wardrobe cabinet with a stylish design.",
+        "Price": 75.5,
+        "StockQuantity": 11,
+        "PictureUrl": "/images/furnis/product_22.jpg",
+        "CategoryId": 4,
+        "RoomId": 2
+    },
+    {        
+        "Name": "Bookshelf Cabinet 23",
+        "Description": "A high-quality bookshelf cabinet with a stylish design.",
+        "Price": 101.0,
+        "StockQuantity": 12,
+        "PictureUrl": "/images/furnis/product_23.jpg",
+        "CategoryId": 5,
+        "RoomId": 3
+    },
+    {        
+        "Name": "Shoe Storage Cabinet 24",
+        "Description": "A high-quality shoe storage cabinet with a stylish design.",
+        "Price": 126.5,
+        "StockQuantity": 13,
+        "PictureUrl": "/images/furnis/product_24.jpg",
+        "CategoryId": 6,
+        "RoomId": 4
+    },
+    {        
+        "Name": "Bathroom Cabinet 25",
+        "Description": "A high-quality bathroom cabinet with a stylish design.",
+        "Price": 152.0,
+        "StockQuantity": 14,
+        "PictureUrl": "/images/furnis/product_25.jpg",
+        "CategoryId": 1,
+        "RoomId": 1
+    },
+    {        
+        "Name": "Study Desk 26",
+        "Description": "A high-quality study desk with a stylish design.",
+        "Price": 177.5,
+        "StockQuantity": 15,
+        "PictureUrl": "/images/furnis/product_26.jpg",
+        "CategoryId": 2,
+        "RoomId": 2
+    },
+    {        
+        "Name": "Gaming Desk 27",
+        "Description": "A high-quality gaming desk with a stylish design.",
+        "Price": 203.0,
+        "StockQuantity": 16,
+        "PictureUrl": "/images/furnis/product_27.jpg",
+        "CategoryId": 3,
+        "RoomId": 3
+    },
+    {        
+        "Name": "Standing Desk 28",
+        "Description": "A high-quality standing desk with a stylish design.",
+        "Price": 228.5,
+        "StockQuantity": 17,
+        "PictureUrl": "/images/furnis/product_28.jpg",
+        "CategoryId": 4,
+        "RoomId": 4
+    },
+    {        
+        "Name": "Minimalist Office Desk 29",
+        "Description": "A high-quality minimalist office desk with a stylish design.",
+        "Price": 254.0,
+        "StockQuantity": 18,
+        "PictureUrl": "/images/furnis/product_29.jpg",
+        "CategoryId": 5,
+        "RoomId": 1
+    },
+    {        
+        "Name": "Compact Work Desk 30",
+        "Description": "A high-quality compact work desk with a stylish design.",
+        "Price": 279.5,
+        "StockQuantity": 19,
+        "PictureUrl": "/images/furnis/product_30.jpg",
+        "CategoryId": 6,
+        "RoomId": 2
+    },
+    {        
+        "Name": "Wooden Dining Chair 31",
+        "Description": "A high-quality wooden dining chair with a stylish design.",
+        "Price": 50.0,
+        "StockQuantity": 20,
+        "PictureUrl": "/images/furnis/product_31.jpg",
+        "CategoryId": 1,
+        "RoomId": 3
+    },
+    {        
+        "Name": "Ergonomic Office Chair 32",
+        "Description": "A high-quality ergonomic office chair with a stylish design.",
+        "Price": 75.5,
+        "StockQuantity": 21,
+        "PictureUrl": "/images/furnis/product_32.jpg",
+        "CategoryId": 2,
+        "RoomId": 4
+    },
+    {        
+        "Name": "Modern Lounge Chair 33",
+        "Description": "A high-quality modern lounge chair with a stylish design.",
+        "Price": 101.0,
+        "StockQuantity": 22,
+        "PictureUrl": "/images/furnis/product_33.jpg",
+        "CategoryId": 3,
+        "RoomId": 1
+    },
+    {        
+        "Name": "Classic Armchair 34",
+        "Description": "A high-quality classic armchair with a stylish design.",
+        "Price": 126.5,
+        "StockQuantity": 23,
+        "PictureUrl": "/images/furnis/product_34.jpg",
+        "CategoryId": 4,
+        "RoomId": 2
+    },
+    {        
+        "Name": "Folding Chair 35",
+        "Description": "A high-quality folding chair with a stylish design.",
+        "Price": 152.0,
+        "StockQuantity": 24,
+        "PictureUrl": "/images/furnis/product_35.jpg",
+        "CategoryId": 5,
+        "RoomId": 3
+    },
+    {        
+        "Name": "Luxury Leather Sofa 36",
+        "Description": "A high-quality luxury leather sofa with a stylish design.",
+        "Price": 177.5,
+        "StockQuantity": 25,
+        "PictureUrl": "/images/furnis/product_36.jpg",
+        "CategoryId": 6,
+        "RoomId": 4
+    },
+    {        
+        "Name": "Fabric Recliner Sofa 37",
+        "Description": "A high-quality fabric recliner sofa with a stylish design.",
+        "Price": 203.0,
+        "StockQuantity": 26,
+        "PictureUrl": "/images/furnis/product_37.jpg",
+        "CategoryId": 1,
+        "RoomId": 1
+    },
+    {        
+        "Name": "Modern Sectional Sofa 38",
+        "Description": "A high-quality modern sectional sofa with a stylish design.",
+        "Price": 228.5,
+        "StockQuantity": 27,
+        "PictureUrl": "/images/furnis/product_38.jpg",
+        "CategoryId": 2,
+        "RoomId": 2
+    },
+    {        
+        "Name": "Convertible Sofa Bed 39",
+        "Description": "A high-quality convertible sofa bed with a stylish design.",
+        "Price": 254.0,
+        "StockQuantity": 28,
+        "PictureUrl": "/images/furnis/product_39.jpg",
+        "CategoryId": 3,
+        "RoomId": 3
+    },
+    {        
+        "Name": "Velvet Sofa 40",
+        "Description": "A high-quality velvet sofa with a stylish design.",
+        "Price": 279.5,
+        "StockQuantity": 29,
+        "PictureUrl": "/images/furnis/product_40.jpg",
+        "CategoryId": 4,
+        "RoomId": 4
+    },
+    {        
+        "Name": "Round Coffee Table 41",
+        "Description": "A high-quality round coffee table with a stylish design.",
+        "Price": 50.0,
+        "StockQuantity": 10,
+        "PictureUrl": "/images/furnis/product_41.jpg",
+        "CategoryId": 5,
+        "RoomId": 1
+    },
+    {        
+        "Name": "Wooden Dining Table 42",
+        "Description": "A high-quality wooden dining table with a stylish design.",
+        "Price": 75.5,
+        "StockQuantity": 11,
+        "PictureUrl": "/images/furnis/product_42.jpg",
+        "CategoryId": 6,
+        "RoomId": 2
+    },
+    {        
+        "Name": "Glass Top Table 43",
+        "Description": "A high-quality glass top table with a stylish design.",
+        "Price": 101.0,
+        "StockQuantity": 12,
+        "PictureUrl": "/images/furnis/product_43.jpg",
+        "CategoryId": 1,
+        "RoomId": 3
+    },
+    {        
+        "Name": "Foldable Study Table 44",
+        "Description": "A high-quality foldable study table with a stylish design.",
+        "Price": 126.5,
+        "StockQuantity": 13,
+        "PictureUrl": "/images/furnis/product_44.jpg",
+        "CategoryId": 2,
+        "RoomId": 4
+    },
+    {        
+        "Name": "Marble Office Table 45",
+        "Description": "A high-quality marble office table with a stylish design.",
+        "Price": 152.0,
+        "StockQuantity": 14,
+        "PictureUrl": "/images/furnis/product_45.jpg",
+        "CategoryId": 3,
+        "RoomId": 1
+    },
+    {        
+        "Name": "Queen Size Bed 46",
+        "Description": "A high-quality queen size bed with a stylish design.",
+        "Price": 177.5,
+        "StockQuantity": 15,
+        "PictureUrl": "/images/furnis/product_46.jpg",
+        "CategoryId": 4,
+        "RoomId": 2
+    },
+    {        
+        "Name": "King Size Wooden Bed 47",
+        "Description": "A high-quality king size wooden bed with a stylish design.",
+        "Price": 203.0,
+        "StockQuantity": 16,
+        "PictureUrl": "/images/furnis/product_47.jpg",
+        "CategoryId": 5,
+        "RoomId": 3
+    },
+    {        
+        "Name": "Single Metal Bed 48",
+        "Description": "A high-quality single metal bed with a stylish design.",
+        "Price": 228.5,
+        "StockQuantity": 17,
+        "PictureUrl": "/images/furnis/product_48.jpg",
+        "CategoryId": 6,
+        "RoomId": 4
+    },
+    {        
+        "Name": "Bunk Bed 49",
+        "Description": "A high-quality bunk bed with a stylish design.",
+        "Price": 254.0,
+        "StockQuantity": 18,
+        "PictureUrl": "/images/furnis/product_49.jpg",
+        "CategoryId": 1,
+        "RoomId": 1
+    },
+    {        
+        "Name": "Sofa Bed 50",
+        "Description": "A high-quality sofa bed with a stylish design.",
+        "Price": 279.5,
+        "StockQuantity": 19,
+        "PictureUrl": "/images/furnis/product_50.jpg",
+        "CategoryId": 2,
+        "RoomId": 2
+    },
+    {        
+        "Name": "Kitchen Cabinet 51",
+        "Description": "A high-quality kitchen cabinet with a stylish design.",
+        "Price": 50.0,
+        "StockQuantity": 20,
+        "PictureUrl": "/images/furnis/product_51.jpg",
+        "CategoryId": 3,
+        "RoomId": 3
+    },
+    {        
+        "Name": "Wardrobe Cabinet 52",
+        "Description": "A high-quality wardrobe cabinet with a stylish design.",
+        "Price": 75.5,
+        "StockQuantity": 21,
+        "PictureUrl": "/images/furnis/product_52.jpg",
+        "CategoryId": 4,
+        "RoomId": 4
+    },
+    {        
+        "Name": "Bookshelf Cabinet 53",
+        "Description": "A high-quality bookshelf cabinet with a stylish design.",
+        "Price": 101.0,
+        "StockQuantity": 22,
+        "PictureUrl": "/images/furnis/product_53.jpg",
+        "CategoryId": 5,
+        "RoomId": 1
+    },
+    {        
+        "Name": "Shoe Storage Cabinet 54",
+        "Description": "A high-quality shoe storage cabinet with a stylish design.",
+        "Price": 126.5,
+        "StockQuantity": 23,
+        "PictureUrl": "/images/furnis/product_54.jpg",
+        "CategoryId": 6,
+        "RoomId": 2
+    },
+    {        
+        "Name": "Bathroom Cabinet 55",
+        "Description": "A high-quality bathroom cabinet with a stylish design.",
+        "Price": 152.0,
+        "StockQuantity": 24,
+        "PictureUrl": "/images/furnis/product_55.jpg",
+        "CategoryId": 1,
+        "RoomId": 3
+    },
+    {        
+        "Name": "Study Desk 56",
+        "Description": "A high-quality study desk with a stylish design.",
+        "Price": 177.5,
+        "StockQuantity": 25,
+        "PictureUrl": "/images/furnis/product_56.jpg",
+        "CategoryId": 2,
+        "RoomId": 4
+    },
+    {        
+        "Name": "Gaming Desk 57",
+        "Description": "A high-quality gaming desk with a stylish design.",
+        "Price": 203.0,
+        "StockQuantity": 26,
+        "PictureUrl": "/images/furnis/product_57.jpg",
+        "CategoryId": 3,
+        "RoomId": 1
+    },
+    {        
+        "Name": "Standing Desk 58",
+        "Description": "A high-quality standing desk with a stylish design.",
+        "Price": 228.5,
+        "StockQuantity": 27,
+        "PictureUrl": "/images/furnis/product_58.jpg",
+        "CategoryId": 4,
+        "RoomId": 2
+    },
+    {        
+        "Name": "Minimalist Office Desk 59",
+        "Description": "A high-quality minimalist office desk with a stylish design.",
+        "Price": 254.0,
+        "StockQuantity": 28,
+        "PictureUrl": "/images/furnis/product_59.jpg",
+        "CategoryId": 5,
+        "RoomId": 3
+    },
+    {        
+        "Name": "Compact Work Desk 60",
+        "Description": "A high-quality compact work desk with a stylish design.",
+        "Price": 279.5,
+        "StockQuantity": 29,
+        "PictureUrl": "/images/furnis/product_60.jpg",
+        "CategoryId": 6,
+        "RoomId": 4
+    }
+]

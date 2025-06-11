@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="93.834" height="93.833">
+  <defs>
+    <linearGradient id="b" x1=".5" y1=".043" x2=".5" y2=".933" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#58f17b"/>
+      <stop offset="1" stop-color="#16cd6f"/>
+    </linearGradient>
+    <filter id="a" x="0" y="0" width="93.834" height="93.833" filterUnits="userSpaceOnUse">
+      <feOffset dy="3"/>
+      <feGaussianBlur stdDeviation="4.5" result="blur"/>
+      <feFlood flood-color="#2bbd85" flood-opacity=".502"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <clipPath id="c">
+      <path d="M7.741 18.132l-7.3-7.3a1.5 1.5 0 0 1 0-2.121l2.227-2.23a1.5 1.5 0 0 1 2.121 0l6.653 6.653L25.244.4a1.5 1.5 0 0 1 2.078.042l2.227 2.227a1.5 1.5 0 0 1 0 2.121l-.043.042-17.218 15.885a1.5 1.5 0 0 1-2.078-.042l-2.227-2.226a1.5 1.5 0 0 1-.242-.317z" fill="#4fdc6f"/>
+    </clipPath>
+  </defs>
+  <g data-name="Group 2">
+    <path data-name="Fill 4" d="M66.834 33.417A33.417 33.417 0 1 1 33.417 0a33.416 33.416 0 0 1 33.417 33.417" transform="translate(13.5 10.5)" fill="url(#b)" filter="url(#a)"/>
+    <g data-name="Icons/Check Big">
+      <path data-name="Icons/Check Big background" fill="rgba(0,0,0,0)" d="M28.5 25.5h36v36h-36z"/>
+      <path data-name="Mask" d="M39.241 51.132l-7.3-7.3a1.5 1.5 0 0 1 0-2.121l2.227-2.23a1.5 1.5 0 0 1 2.121 0l6.653 6.653L56.744 33.4a1.5 1.5 0 0 1 2.078.042l2.227 2.227a1.5 1.5 0 0 1 0 2.121l-.043.042-17.218 15.885a1.5 1.5 0 0 1-2.078-.042l-2.227-2.226a1.5 1.5 0 0 1-.242-.317z" fill="#4fdc6f"/>
+      <g transform="translate(31.5 33)" clip-path="url(#c)">
+        <g data-name="Colors/Primary/Dark">
+          <path data-name="Colors/Primary/Dark background" fill="rgba(0,0,0,0)" d="M-3-7.5h36v36H-3z"/>
+          <path data-name="Rectangle 7 Copy 30" fill="#fff" d="M-3-7.5h36v36H-3z"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

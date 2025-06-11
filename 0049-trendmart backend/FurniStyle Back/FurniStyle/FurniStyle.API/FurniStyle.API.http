@@ -1,0 +1,6 @@
+@FurniStyle.API_HostAddress = https://furnistyle.runasp.net
+
+GET {{FurniStyle.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

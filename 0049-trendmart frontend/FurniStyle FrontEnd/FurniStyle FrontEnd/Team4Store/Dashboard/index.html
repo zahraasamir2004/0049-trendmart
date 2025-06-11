@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Furniture Admin Dashboard</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- Sidebar -->
+      <nav id="sidebar" class="bg-dark text-white">
+        <div class="sidebar-header">
+          <a href="/Index.html"> <h3>Furniture Admin</h3> </a>
+        </div>
+
+        <ul class="list-unstyled components">
+          <li class="active">
+            <a href="index.html"> <i class="fas fa-home"></i> Dashboard </a>
+          </li>
+          <li>
+            <a href="furniture.html">
+              <i class="fas fa-couch"></i> Furniture
+            </a>
+          </li>
+          <li>
+            <a href="categories.html">
+              <i class="fas fa-tags"></i> Categories
+            </a>
+          </li>
+          <li>
+            <a href="rooms.html"> <i class="fas fa-door-open"></i> Rooms </a>
+          </li>
+          <li>
+            <a href="orders.html">
+              <i class="fas fa-shopping-cart"></i> Orders
+            </a>
+          </li>
+          <li>
+            <a href="users.html"> <i class="fas fa-users"></i> Users </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Page Content -->
+      <div id="content">
+        <!-- Top Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container-fluid">
+            <button type="button" id="sidebarCollapse" class="btn btn-dark">
+              <i class="fas fa-bars"></i>
+            </button>
+            <div class="ms-auto">
+              <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                  <a class="nav-link" href="#" role="button">
+                    <i class="fas fa-user"></i> Admin
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+        <!-- Main Content -->
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-3 mb-4">
+              <div class="card bg-primary text-white">
+                <div class="card-body">
+                  <h5 class="card-title">Total Furniture</h5>
+                  <h2 class="card-text">245</h2>
+                  <a href="furniture.html" class="text-white"
+                    >View Details <i class="fas fa-arrow-right"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 mb-4">
+              <div class="card bg-success text-white">
+                <div class="card-body">
+                  <h5 class="card-title">Total Categories</h5>
+                  <h2 class="card-text">1,234</h2>
+                  <a href="categories.html" class="text-white"
+                    >View Details <i class="fas fa-arrow-right"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 mb-4">
+              <div class="card bg-warning text-white">
+                <div class="card-body">
+                  <h5 class="card-title">Total Orders</h5>
+                  <h2 class="card-text">567</h2>
+                  <a href="orders.html" class="text-white"
+                    >View Details <i class="fas fa-arrow-right"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 mb-4">
+              <div class="card bg-info text-white">
+                <div class="card-body">
+                  <h5 class="card-title">Total Users</h5>
+                  <h2 class="card-text">1</h2>
+                  <a href="users.html" class="text-white"
+                    >View Details <i class="fas fa-arrow-right"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-8">
+              <div class="card">
+                <div class="card-header">
+                  <h5 class="mb-0">Recent Orders</h5>
+                </div>
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table table-hover">
+                      <thead>
+                        <tr>
+                          <th>Order ID</th>
+                          <th>Customer</th>
+                          <th>Items</th>
+                          <th>Amount</th>
+                          <th>Status</th>
+                          <th>Date</th>
+                          <th>Action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>#12345</td>
+                          <td>John Doe</td>
+                          <td>3 items</td>
+                          <td>$1,200</td>
+                          <td>
+                            <span class="badge bg-success">Completed</span>
+                          </td>
+                          <td>2024-03-20</td>
+                          <td>
+                            <a
+                              href="orders.html#view-12345"
+                              class="btn btn-sm btn-info"
+                            >
+                              <i class="fas fa-eye"></i>
+                            </a>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card">
+                <div class="card-header">
+                  <h5 class="mb-0">Quick Actions</h5>
+                </div>
+                <div class="card-body">
+                  <div class="d-grid gap-2">
+                    <a href="furniture.html#add" class="btn btn-primary">
+                      <i class="fas fa-plus"></i> Add New Furniture
+                    </a>
+                    <a href="categories.html#add" class="btn btn-success">
+                      <i class="fas fa-plus"></i> Add New Category
+                    </a>
+                    <a href="rooms.html#add" class="btn btn-info">
+                      <i class="fas fa-plus"></i> Add New Room
+                    </a>
+                    <a href="users.html#add" class="btn btn-warning">
+                      <i class="fas fa-plus"></i> Add New User
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      function displayOrders() {
+        const orderDetails = JSON.parse(localStorage.getItem("orderDetails"));
+
+        if (!orderDetails || orderDetails.length === 0) {
+          return '<tr><td colspan="7">No orders found</td></tr>';
+        }
+
+        const tableRows = orderDetails
+          .map((order) => {
+            const date = new Date(order.orderDate).toLocaleDateString();
+
+            const itemsCount = order.items.length;
+
+            const statusClass =
+              {
+                Pending: "bg-info",
+              }[order.status] || "bg-success";
+
+            return `
+                <tr>
+                    <td>${order.orderNumber}</td>
+                    <td>${order.user.name}</td>
+                    <td>${date}</td>
+                    <td>${itemsCount} ${
+              itemsCount === 1 ? "item" : "items"
+            }</td>
+                    <td>$${order.total}</td>
+                    <td><span class="badge ${statusClass}">${
+              order.status
+            }</span></td>
+                    <td>
+                        <button class="btn btn-sm btn-info" data-bs-toggle="modal" 
+                                data-bs-target="#viewOrderModal" onclick="viewOrder('${
+                                  order.orderNumber
+                                }')">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                      
+                      
+                    </td>
+                </tr>
+            `;
+          })
+          .join("");
+
+        document.querySelector(".table-hover tbody").innerHTML = tableRows;
+      }
+
+      function viewOrder(orderNumber) {
+        window.location.href = `./Dashboard/orders.html?orderNumber=${orderNumber}`;
+      }
+
+      document.addEventListener("DOMContentLoaded", displayOrders);
+
+      //   **********************************************************
+      const user = JSON.parse(localStorage.getItem("userCredentials"));
+
+      if (!user || user.role !== "Admin") {
+        window.location.href = "../AccessDenied.html";
+      }
+
+      // *******************************************************
+    </script>
+  </body>
+</html>

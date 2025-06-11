@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Orders Management</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- Sidebar (same as index.html) -->
+      <nav id="sidebar" class="bg-dark text-white">
+        <div class="sidebar-header">
+          <h3>Furniture Admin</h3>
+        </div>
+        <ul class="list-unstyled components">
+          <li>
+            <a href="index.html"> <i class="fas fa-home"></i> Dashboard </a>
+          </li>
+          <li class="active">
+            <a
+              href="#ordersSubmenu"
+              data-bs-toggle="collapse"
+              aria-expanded="true"
+            >
+              <i class="fas fa-shopping-cart"></i> Orders
+            </a>
+            <ul class="collapse show list-unstyled" id="ordersSubmenu">
+              <li><a href="orders.html">All Orders</a></li>
+              <li><a href="orders.html?status=pending">Pending Orders</a></li>
+            </ul>
+          </li>
+          <!-- Other menu items -->
+        </ul>
+      </nav>
+
+      <!-- Page Content -->
+      <div id="content">
+        <!-- Top Navigation (same as index.html) -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container-fluid">
+            <button type="button" id="sidebarCollapse" class="btn btn-dark">
+              <i class="fas fa-bars"></i>
+            </button>
+            <div class="ms-auto">
+              <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    id="navbarDropdown"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                  >
+                    <i class="fas fa-user"></i> Admin
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-end">
+                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                    <li><a class="dropdown-item" href="#">Settings</a></li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li><a class="dropdown-item" href="#">Logout</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+        <!-- Main Content -->
+        <div class="container-fluid">
+          <div class="card">
+            <div
+              class="card-header d-flex justify-content-between align-items-center"
+            >
+              <h5 class="mb-0">Orders List</h5>
+              <div class="btn-group">
+                <button
+                  class="btn btn-outline-primary"
+                  onclick="filterOrders('all')"
+                >
+                  All
+                </button>
+                <button
+                  class="btn btn-outline-warning"
+                  onclick="filterOrders('pending')"
+                >
+                  Pending
+                </button>
+                <button
+                  class="btn btn-outline-success"
+                  onclick="filterOrders('completed')"
+                >
+                  Completed
+                </button>
+                <button
+                  class="btn btn-outline-danger"
+                  onclick="filterOrders('cancelled')"
+                >
+                  Cancelled
+                </button>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th>Order ID</th>
+                      <th>Customer</th>
+                      <th>Date</th>
+                      <th>Items</th>
+                      <th>Total</th>
+                      <th>Status</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>#12345</td>
+                      <td>John Doe</td>
+                      <td>2024-03-20</td>
+                      <td>3 items</td>
+                      <td>$1,200</td>
+                      <td><span class="badge bg-success">Completed</span></td>
+                      <td>
+                        <button
+                          class="btn btn-sm btn-info"
+                          data-bs-toggle="modal"
+                          data-bs-target="#viewOrderModal"
+                        >
+                          <i class="fas fa-eye"></i>
+                        </button>
+                        <button
+                          class="btn btn-sm btn-warning"
+                          onclick="updateOrderStatus(12345, 'pending')"
+                        >
+                          <i class="fas fa-clock"></i>
+                        </button>
+                        <button
+                          class="btn btn-sm btn-danger"
+                          onclick="cancelOrder(12345)"
+                        >
+                          <i class="fas fa-times"></i>
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- View Order Modal -->
+    <div class="modal fade" id="viewOrderModal" tabindex="-1">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Order Details #am-8426</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="row mb-4">
+              <div class="col-md-6">
+                <h6>Customer Information</h6>
+                <p>abdullah <br /></p>
+              </div>
+              <div class="col-md-6">
+                <h6>Order Info</h6>
+                <p>
+                  Order Date: 4/14/2025<br />
+                  Status: Processing
+                </p>
+              </div>
+            </div>
+            <div class="table-responsive">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Item</td>
+                    <td>$150.00</td>
+                    <td>1</td>
+                    <td>$150.00</td>
+                  </tr>
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <td colspan="3" class="text-end">
+                      <strong>Total:</strong>
+                    </td>
+                    <td><strong>$150.00</strong></td>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              onclick="printOrder('am-8426')"
+            >
+              Print Order
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+      function displayOrders() {
+        const orderDetails = JSON.parse(localStorage.getItem("orderDetails"));
+
+        if (!orderDetails || orderDetails.length === 0) {
+          return '<tr><td colspan="7">No orders found</td></tr>';
+        }
+
+        const tableRows = orderDetails
+          .map((order) => {
+            const date = new Date(order.orderDate).toLocaleDateString();
+
+            const itemsCount = order.items.length;
+
+            const statusClass =
+              {
+                Processing: "bg-warning",
+                Success: "bg-success",
+                Pending: "bg-info",
+                Cancelled: "bg-danger",
+              }[order.status] || "bg-secondary";
+
+            return `
+          <tr>
+              <td>${order.orderNumber}</td>
+              <td>${order.user.name}</td>
+              <td>${date}</td>
+              <td>${itemsCount} ${itemsCount === 1 ? "item" : "items"}</td>
+              <td>$${order.total}</td>
+              <td><span class="badge ${statusClass}">${order.status}</span></td>
+              <td>
+                  <button class="btn btn-sm btn-info" data-bs-toggle="modal"
+                          data-bs-target="#viewOrderModal" onclick="viewOrder('${
+                            order.orderNumber
+                          }')">
+                      <i class="fas fa-eye"></i>
+                  </button>
+                  <button class="btn btn-sm btn-warning"
+                          onclick="updateOrderStatus('${
+                            order.orderNumber
+                          }', 'Success')">
+                      <i class="fas fa-check"></i>  <!-- Changed icon to checkmark -->
+                  </button>
+                  <button class="btn btn-sm btn-danger"
+                          onclick="cancelOrder('${order.orderNumber}')">
+                      <i class="fas fa-times"></i>
+                  </button>
+              </td>
+          </tr>
+      `;
+          })
+          .join("");
+
+        document.querySelector(".table-hover tbody").innerHTML = tableRows;
+      }
+
+      function viewOrder(orderNumber) {
+        const orderDetails = JSON.parse(localStorage.getItem("orderDetails"));
+        const order = orderDetails.find((o) => o.orderNumber === orderNumber);
+        console.log("Viewing order:", order);
+      }
+
+      function updateOrderStatus(orderNumber, status) {
+        let orderDetails = JSON.parse(localStorage.getItem("orderDetails"));
+        const orderIndex = orderDetails.findIndex(
+          (o) => o.orderNumber === orderNumber
+        );
+        if (orderIndex !== -1) {
+          orderDetails[orderIndex].status = status;
+          localStorage.setItem("orderDetails", JSON.stringify(orderDetails));
+          displayOrders();
+        }
+      }
+
+      function cancelOrder(orderNumber) {
+        let orderDetails = JSON.parse(localStorage.getItem("orderDetails"));
+        const orderIndex = orderDetails.findIndex(
+          (o) => o.orderNumber === orderNumber
+        );
+        if (orderIndex !== -1) {
+          orderDetails[orderIndex].status = "Cancelled";
+          localStorage.setItem("orderDetails", JSON.stringify(orderDetails));
+          displayOrders();
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", displayOrders);
+    </script>
+  </body>
+</html>

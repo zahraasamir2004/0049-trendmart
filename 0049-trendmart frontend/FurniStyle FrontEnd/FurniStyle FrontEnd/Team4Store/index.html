@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./CSS/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+      integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+      integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+    <title>team 4 store</title>
+  </head>
+  <body>
+    <!-- Start Sale Banner -->
+
+    <section
+      style="
+        position: relative;
+        z-index: 36;
+        background-color: #000000;
+        padding: 10px;
+      "
+      class="text-center"
+    >
+      <div class="container">
+        <a class="navbar-brand ml-3 hvr-shrink" href="#">
+          <span class="text-light" style="font-size: 13px">
+            <i class="far fa-question-circle"></i> Summer Sale for all furniture
+            and Free Express Delivery - OFF 50%!
+          </span>
+        </a>
+        &nbsp;
+
+        <a class="navbar-brand ml-3 hvr-shrink" href="#">
+          <span class="text-light" style="font-size: 13px"
+            ><i class="fas fa-globe-africa"></i> العربية
+          </span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Start Main nav -->
+
+    <nav class="navbar navbar-expand-lg sticky-top header-transperant">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+          <h6>Team 4 Store <span class="badge bg-danger">beta</span></h6>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Products.html">Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="ContactUs.html">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="AboutUs.html">About</a>
+            </li>
+            <li class="nav-item" id="loginNavItem">
+              <a class="nav-link" href="Login.html">Login</a>
+            </li>
+            <li class="nav-item" id="registerNavItem">
+              <a class="nav-link" href="Register.html">Register</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Dashboard/index.html">Dashboard</a>
+            </li>
+          </ul>
+
+          <div
+            class="input-group col-12 col-md-3"
+            style="max-width: 450px; margin-right: 20px"
+          >
+            <input
+              type="search"
+              class="form-control bg-transparent border border-secondary"
+              placeholder="Find what you need?"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-secondary" type="submit">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </div>
+          <li class="nav-item d-none navbar-nav list-unstyled" id="userNavItem">
+            <a class="nav-link" href="#">
+              <span id="userNameDisplay"></span>
+            </a>
+          </li>
+          <div class="d-flex gap-10 justify-content-between p-2">
+            <li class="nav-item dropdown list-unstyled">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <i class="fa-regular fa-user fa-2xl"></i>
+              </a>
+              <ul
+                class="dropdown-menu mt-3 list-unstyled"
+                aria-labelledby="navbarDropdown"
+              >
+                <li><a class="dropdown-item" href="Orders.html">Orders</a></li>
+                <li>
+                  <a class="dropdown-item" href="./Dashboard/index.html"
+                    >Dashboard</a
+                  >
+                </li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a
+                    class="dropdown-item text-danger"
+                    href="#"
+                    onclick="logout()"
+                    >Logout</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <a class="nav-link" href="Cart.html" style="padding-right: 20px">
+              <i class="fa-solid fa-cart-shopping fa-2xl"></i>
+              <span id="cartCount" class="badge bg-danger">0</span>
+            </a>
+            <a class="nav-link" href="WishList.html">
+              <i class="far fa-heart fa-2xl"></i>
+              <span id="wishlistCount" class="badge bg-danger">0</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Start News area nav -->
+    <div
+      class="container-fluid bg-black"
+      style="padding: 0; width: 100%; overflow: hidden"
+    >
+      <div class="marquee row text-white p-3">
+        <div class="marquee-content">
+          <span class="text-danger fw-bold">Big Sale : &nbsp; </span>
+          <span class="bg-light text-dark badge">Now</span> &nbsp; Free Express
+          Delivery - OFF 50%! &nbsp; &nbsp;
+          <span class="bg-light text-dark badge">Now</span>
+          &nbsp; Free Express Delivery - OFF 50%! &nbsp; &nbsp;
+          <span class="bg-light text-dark badge">Now</span> &nbsp; Free Express
+          Delivery - OFF 50%! &nbsp; &nbsp;
+          <span class="bg-light text-dark badge">Now</span> &nbsp; Free Express
+          Delivery - OFF 50%! &nbsp;
+        </div>
+      </div>
+    </div>
+
+    <!-- Start carousel slide -->
+
+    <section>
+      <div
+        id="carouselExampleIndicators"
+        class="carousel slide"
+        data-bs-ride="carousel"
+      >
+        <ol class="carousel-indicators">
+          <li
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="0"
+            class="active"
+          ></li>
+          <li
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="1"
+          ></li>
+          <li
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="2"
+          ></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              src="https://images.unsplash.com/photo-1600121848594-d8644e57abab?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              class="d-block w-100"
+              height="580px "
+              alt="..."
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <button type="button" class="btn btn-outline-light">
+                Learn more
+              </button>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img
+              src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              class="d-block w-100"
+              height="580px "
+              alt="..."
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <button type="button" class="btn btn-outline-light">
+                Learn more
+              </button>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img
+              src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              class="d-block w-100"
+              height="580px "
+              alt="..."
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <button type="button" class="btn btn-outline-light">
+                Learn more
+              </button>
+            </div>
+          </div>
+        </div>
+        <a
+          class="carousel-control-prev"
+          href="#carouselExampleIndicators"
+          role="button"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </a>
+        <a
+          class="carousel-control-next"
+          href="#carouselExampleIndicators"
+          role="button"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Start Today’s Cards  -->
+
+    <section class="sectionpadding">
+      <div style="display: flex; gap: 10px">
+        <span class="square"></span>
+        <span style="color: #db4444; font-size: 25px; font-weight: 500">
+          Today’s
+        </span>
+      </div>
+      <br />
+      <div
+        class="d-flex flex-row gap-5 align-items-start justify-content-start"
+      >
+        <h4 class="mb-3 fw-bolder">Flash Sales</h4>
+
+        <div
+          class="text-black p-3 rounded d-flex justify-content-center align-items-center"
+          style="margin-top: -30px"
+        >
+          <div
+            class="countdown-box d-flex justify-content-center align-items-center gap-3"
+          >
+            <div class="text-center">
+              <div class="countdown-label">Days</div>
+              <span id="days" class="fs-4 fw-bold">00</span>
+            </div>
+            <span class="fs-4 fw-bold text-danger">:</span>
+
+            <div class="text-center">
+              <div class="countdown-label">Hours</div>
+              <span id="hours" class="fs-4 fw-bold">00</span>
+            </div>
+            <span class="fs-4 fw-bold text-danger">:</span>
+
+            <div class="text-center">
+              <div class="countdown-label">Minutes</div>
+              <span id="minutes" class="fs-4 fw-bold">00</span>
+            </div>
+            <span class="fs-4 fw-bold text-danger">:</span>
+
+            <div class="text-center">
+              <div class="countdown-label">Seconds</div>
+              <span id="seconds" class="fs-4 fw-bold">00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="owl-carousel owl-theme" data-category="Chairs"></div>
+    </section>
+
+    <!-- Start Browse By Category Cards  -->
+
+    <section class="sectionpadding">
+      <div style="display: flex; gap: 10px">
+        <span class="square"></span>
+        <span style="color: #db4444; font-size: 25px; font-weight: 500">
+          Categories
+        </span>
+      </div>
+      <br />
+
+      <h4 class="mb-3 fw-bolder">Browse By Category</h4>
+
+      <div class="categorycontainer">
+        <a href="Categories.html?category=Chairs" class="categoryitems">
+          <i class="fa-solid fa-chair"></i>
+          <h4>Chairs</h4>
+        </a>
+        <a href="Categories.html?category=Tables" class="categoryitems">
+          <i class="fa-solid fa-table"></i>
+          <h4>Tables</h4>
+        </a>
+        <a href="Categories.html?category=Sofas" class="categoryitems">
+          <i class="fa-solid fa-couch"></i>
+          <h4>Sofas</h4>
+        </a>
+        <a href="Categories.html?category=Cabinets" class="categoryitems">
+          <i class="fa-solid fa-ethernet"></i>
+          <h4>Cabinets</h4>
+        </a>
+        <a href="Categories.html?category=Desks" class="categoryitems">
+          <i class="fa-solid fa-stapler"></i>
+          <h4>Desks</h4>
+        </a>
+        <a href="Categories.html?category=Kitchen" class="categoryitems">
+          <i class="fa-solid fa-kitchen-set"></i>
+          <h4>Kitchen</h4>
+        </a>
+      </div>
+    </section>
+
+    <!-- Start Best Selling Products Card  -->
+
+    <section class="sectionpadding">
+      <div style="display: flex; gap: 10px">
+        <span class="square"></span>
+        <span style="color: #db4444; font-size: 25px; font-weight: 500">
+          This Month
+        </span>
+      </div>
+      <br />
+      <div style="display: flex; justify-content: space-between">
+        <h4 class="mb-3 fw-bolder">Best Selling Products</h4>
+
+        <a
+          href="Products.html"
+          style="
+            background-color: #db4444;
+            padding: 10px 50px 10px 50px;
+            border-radius: 5px;
+            color: white;
+            border: none;
+            text-decoration: none;
+          "
+        >
+          View All
+        </a>
+      </div>
+      <br />
+
+      <div class="owl-carousel owl-theme" data-category="Tables"></div>
+    </section>
+
+    <!-- Start Browse our Latest Card  -->
+
+    <section style="position: relative; overflow: hidden">
+      <div>
+        <div class="row">
+          <img
+            src="/assets/images/lamp.jpg"
+            class="full-width-image"
+            height="479"
+            alt=""
+          />
+
+          <div
+            class="col-8 wow fadeInRight changetyping"
+            style="
+              font-family: font-bold;
+              color: #e7e7e7;
+              position: absolute;
+              padding: 20px;
+            "
+          >
+            <span> Change <span class="typing"></span> .. </span>
+
+            <br />
+            <div class="row">
+              <div class="col-6 hvr-bob changetyping" style="color: #e7e7e7">
+                <span class="hvr-icon-back">
+                  Browse our Latest
+                  <i class="hvr-icon fas fa-angle-right"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Start Our Products Cards  -->
+
+    <section class="sectionpadding">
+      <div style="display: flex; gap: 10px">
+        <span class="square"></span>
+        <span style="color: #db4444; font-size: 25px; font-weight: 500">
+          Our Products
+        </span>
+      </div>
+      <br />
+      <div style="display: flex; justify-content: space-between">
+        <h4 class="mb-3 fw-bolder">Explore Our Products</h4>
+      </div>
+      <br />
+
+      <div class="owl-carousel owl-theme" data-category="Chairs"></div>
+      <div class="owl-carousel owl-theme" data-category="Tables"></div>
+
+      <div class="d-flex justify-content-center pt-4">
+        <a
+          href="Products.html"
+          style="
+            background-color: #db4444;
+            padding: 10px 50px 10px 50px;
+            border-radius: 5px;
+            color: white;
+            border: none;
+            text-decoration: none;
+          "
+        >
+          View All Products
+        </a>
+      </div>
+    </section>
+
+    <!-- Start Featured Cards  -->
+
+    <section class="sectionpadding">
+      <div style="display: flex; gap: 10px">
+        <span class="square"></span>
+        <span style="color: #db4444; font-size: 25px; font-weight: 500">
+          Featured
+        </span>
+      </div>
+      <br />
+      <div
+        class="d-flex flex-row gap-5 align-items-start justify-content-start"
+      >
+        <h4 class="mb-3 fw-bolder">New Arrival</h4>
+      </div>
+
+      <div class="row g-2">
+        <!-- Large Image  -->
+        <div class="col-12 col-md-5 p-1">
+          <div class="position-relative overflow-hidden rounded-3 bg-black">
+            <img
+              src="https://images.unsplash.com/photo-1616693153250-bb03055788eb?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="PlayStation 5"
+              class="img-fluid w-100"
+              style="height: 500px; object-fit: cover"
+            />
+            <div
+              class="position-absolute bottom-0 start-0 text-white p-2"
+              style="background: rgba(0, 0, 0, 0.6); width: 100%"
+            >
+              <h6 class="fw-bold m-0">Station</h6>
+              <p class="small m-0">Black and White version of the PS5.</p>
+              <a
+                href="#"
+                class="text-white fw-bold text-decoration-none border-bottom border-white small"
+                >Shop Now</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- right img -->
+        <div class="col-12 col-md-7 p-1">
+          <div class="row g-2">
+            <div class="col-12">
+              <div class="position-relative overflow-hidden rounded-3">
+                <img
+                  src="https://plus.unsplash.com/premium_photo-1726848094123-b69f8c83b824?q=80&w=2131&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  class="img-fluid w-100"
+                  style="height: 246px; object-fit: cover"
+                />
+                <div
+                  class="position-absolute bottom-0 start-0 text-white p-2"
+                  style="background: rgba(0, 0, 0, 0.6); width: 100%"
+                >
+                  <h6 class="fw-bold m-0">Collections</h6>
+                  <p class="small m-0">Fashion collection for a new vibe.</p>
+                  <a
+                    href="#"
+                    class="text-white fw-bold text-decoration-none border-bottom border-white small"
+                    >Shop Now</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- 2 small imgs -->
+            <div class="col-6">
+              <div class="position-relative overflow-hidden rounded-3">
+                <img
+                  src="https://images.unsplash.com/photo-1557618159-7d6fe547ae20?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YmxhY2slMjBmdXJuaXR1cmV8ZW58MHx8MHx8fDA%3D"
+                  class="img-fluid w-100"
+                  style="height: 246px; object-fit: cover"
+                />
+                <div
+                  class="position-absolute bottom-0 start-0 text-white p-1"
+                  style="background: rgba(0, 0, 0, 0.6); width: 100%"
+                >
+                  <h6 class="fw-bold m-0">Speakers</h6>
+                  <p class="small m-0">Amazon wireless speakers.</p>
+                  <a
+                    href="#"
+                    class="text-white fw-bold text-decoration-none border-bottom border-white small"
+                    >Shop Now</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="position-relative overflow-hidden rounded-3">
+                <img
+                  src="https://images.unsplash.com/flagged/photo-1574885173944-c23db8159846?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8YmxhY2slMjBmdXJuaXR1cmV8ZW58MHx8MHx8fDA%3D"
+                  class="img-fluid w-100"
+                  style="height: 246px; object-fit: cover"
+                />
+                <div
+                  class="position-absolute bottom-0 start-0 text-white p-1"
+                  style="background: rgba(0, 0, 0, 0.6); width: 100%"
+                >
+                  <h6 class="fw-bold m-0">Perfume</h6>
+                  <p class="small m-0">GUCCI INTENSE OUD EDP.</p>
+                  <a
+                    href="#"
+                    class="text-white fw-bold text-decoration-none border-bottom border-white small"
+                    >Shop Now</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div>
+      <br />
+      <br />
+      <br />
+      <br />
+    </div>
+    <!-- Start Three Cards  -->
+    <section style="min-height: 66vh">
+      <div>
+        <div class="container-fluid">
+          <div
+            class="row justify-content-center align-content-center text-center"
+            style="height: 400px"
+          >
+            <div class="col-md-3 col-sm-12">
+              <div
+                class="d-flex justify-content-center align-items-center position-relative"
+                style="height: 80px"
+              >
+                <div
+                  class="rounded-circle position-absolute"
+                  style="height: 80px; width: 80px; background-color: #c1c1c1"
+                ></div>
+
+                <div
+                  class="bg-black text-white rounded-circle d-flex justify-content-center align-items-center position-relative"
+                  style="height: 60px; width: 60px"
+                >
+                  <i class="fa-solid fa-car fa-2xl"></i>
+                </div>
+              </div>
+              <br />
+              <h5>FREE AND FAST DELIVERY</h5>
+              <p>Free delivery for all orders over $140</p>
+            </div>
+
+            <div class="col-md-3 col-sm-12">
+              <div
+                class="d-flex justify-content-center align-items-center position-relative"
+                style="height: 80px"
+              >
+                <div
+                  class="rounded-circle position-absolute"
+                  style="height: 80px; width: 80px; background-color: #c1c1c1"
+                ></div>
+
+                <div
+                  class="bg-black text-white rounded-circle d-flex justify-content-center align-items-center position-relative"
+                  style="height: 60px; width: 60px"
+                >
+                  <i class="fa-solid fa-headset fa-2xl"></i>
+                </div>
+              </div>
+              <br />
+
+              <h5>24/7 CUSTOMER SERVICE</h5>
+              <p>Friendly 24/7 customer support:</p>
+            </div>
+
+            <div class="col-md-3 col-sm-12">
+              <div
+                class="d-flex justify-content-center align-items-center position-relative"
+                style="height: 80px"
+              >
+                <div
+                  class="rounded-circle position-absolute"
+                  style="height: 80px; width: 80px; background-color: #c1c1c1"
+                ></div>
+
+                <div
+                  class="bg-black text-white rounded-circle d-flex justify-content-center align-items-center position-relative"
+                  style="height: 60px; width: 60px"
+                >
+                  <i class="fa-regular fa-circle-check fa-2xl"></i>
+                </div>
+              </div>
+              <br />
+
+              <h5>MONEY BACK GUARANTEE</h5>
+              <p>We reurn money within 30 days</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer id="footer-last" class="text-light" style="background: #000000">
+      <div class="container-fluid py-4">
+        <div class="row">
+          <div class="col-lg-4 col-md-3 mb-4 mb-md-0">
+            <a class="navbar-brand" href="#"> Team 4 Store </a>
+            <!-- <img src="/assets/images/svg/am-gray.svg" alt="" height="80" /> -->
+            <p></p>
+          </div>
+          <div class="col-lg-2 col-md-3 col-sm-12 mb-4 mb-md-0">
+            <h5 class="text-uppercase">Help</h5>
+            <ul class="list-unstyled mb-0" style="">
+              <li>
+                <a
+                  href="#!"
+                  class="text-light hvr-backward"
+                  style="text-decoration: none"
+                  ><i class="fas fa-chevron-right"></i> Help Center</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#!"
+                  class="text-light hvr-backward"
+                  style="text-decoration: none"
+                  ><i class="fas fa-chevron-right"></i> Wishlist</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#!"
+                  class="text-light hvr-backward"
+                  style="text-decoration: none"
+                  ><i class="fas fa-chevron-right"></i> Complaints and
+                  suggestions
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#!"
+                  class="text-light hvr-backward"
+                  style="text-decoration: none"
+                  ><i class="fas fa-chevron-right"></i> Return and Exchange
+                  Policy
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-3 col-sm-12 mb-4 mb-md-0">
+            <h5 class="text-uppercase">Our customers</h5>
+
+            <ul class="list-unstyled mb-0" style="">
+              <li>
+                <a
+                  href="#!"
+                  class="text-light hvr-backward"
+                  style="text-decoration: none"
+                  ><i class="fas fa-chevron-right"></i> Our Websites</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#!"
+                  class="text-light hvr-backward"
+                  style="text-decoration: none"
+                  ><i class="fas fa-chevron-right"></i> Latest News</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#!"
+                  class="text-light hvr-backward"
+                  style="text-decoration: none"
+                  ><i class="fas fa-chevron-right"></i> Wishlist
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#!"
+                  class="text-light hvr-backward"
+                  style="text-decoration: none"
+                  ><i class="fas fa-chevron-right"></i> Complaints and
+                  suggestions
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-3 col-sm-12 mb-4 mb-md-0">
+            <h5 class="text-uppercase">Discover</h5>
+
+            <ul class="list-unstyled mb-0">
+              <li>
+                <a
+                  href="#!"
+                  class="text-light hvr-backward"
+                  style="text-decoration: none"
+                  ><i class="fas fa-chevron-right"></i> Offers</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#!"
+                  class="text-light hvr-backward"
+                  style="text-decoration: none"
+                  ><i class="fas fa-chevron-right"></i> Store offers</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#!"
+                  class="text-light hvr-backward"
+                  style="text-decoration: none"
+                  ><i class="fas fa-chevron-right"></i> Photo gallery
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#!"
+                  class="text-light hvr-backward"
+                  style="text-decoration: none"
+                  ><i class="fas fa-chevron-right"></i> Branch locator
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-3 col-sm-12 mb-4 mb-md-0">
+            <h5 class="text-uppercase">Who are we</h5>
+
+            <ul class="list-unstyled mb-0">
+              <li>
+                <a
+                  href="#!"
+                  class="text-light hvr-backward"
+                  style="text-decoration: none"
+                  ><i class="fas fa-chevron-right"></i> About us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#!"
+                  class="text-light hvr-backward"
+                  style="text-decoration: none"
+                  ><i class="fas fa-chevron-right"></i> latest news</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#!"
+                  class="text-light hvr-backward"
+                  style="text-decoration: none"
+                  ><i class="fas fa-chevron-right"></i> Suppliers portal
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#!"
+                  class="text-light hvr-backward"
+                  style="text-decoration: none"
+                  ><i class="fas fa-chevron-right"></i> Jobs portal
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <hr />
+
+      <!----------------------------------- social media  -------------------------->
+      <div class="social-media">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-3">
+              <h5 class="pb-2">Follow us on social media</h5>
+              <ul class="list-unstyled d-flex flex-wrap gap-3">
+                <li class="list-inline-item hvr-shrink">
+                  <i class="fa-brands fa-facebook fa-2xl"></i>
+                </li>
+                <li class="list-inline-item hvr-shrink">
+                  <i class="fa-brands fa-snapchat fa-2xl"></i>
+                </li>
+                <li class="list-inline-item hvr-shrink">
+                  <i class="fa-brands fa-x-twitter fa-2xl"></i>
+                </li>
+                <li class="list-inline-item hvr-shrink mb-3">
+                  <i class="fa-brands fa-instagram fa-2xl"></i>
+                </li>
+
+                <li class="list-inline-item hvr-shrink">
+                  <i class="fa-brands fa-linkedin fa-2xl"></i>
+                </li>
+                <li class="list-inline-item hvr-shrink">
+                  <i class="fa-brands fa-facebook-messenger fa-2xl"></i>
+                </li>
+                <li class="list-inline-item hvr-shrink">
+                  <i class="fa-brands fa-whatsapp fa-2xl"></i>
+                </li>
+                <li class="list-inline-item hvr-shrink">
+                  <i class="fa-brands fa-youtube fa-2xl"></i>
+                </li>
+              </ul>
+            </div>
+
+            <div class="col-md-2 bg-white w-auto rounded-4" id="ipnone">
+              <img
+                src="assets/images/qr.png"
+                style="height: 150px; margin: none"
+              />
+            </div>
+            <div class="col-md-7">
+              <h5>Now enjoy our all-new app</h5>
+              <p>and shop our products and offers wherever you are.</p>
+              <ul class="list-unstyled style">
+                <li class="list-inline-item hvr-shrink">
+                  <img src="assets/images/logos/store-app/app-store.png"
+                  style="height:70px;"
+                </li>
+                <li class="list-inline-item hvr-shrink">
+                  <img src="assets/images/logos/store-app/google-play.png"
+                  style="height:70px;"
+                </li>
+                <li class="list-inline-item hvr-shrink">
+                  <img src="assets/images/logos/store-app/app-gallery.png"
+                  style="height:70px;"
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="copyright">
+        <div class="container-fluid">
+          <div class="row" style="background-color: #111111; padding-top: 8px">
+            <div class="col-md-3 text-light" id="copyright">
+              <p id="footerText" class=" "></p>
+            </div>
+            <div class="col-md-9">
+              <ul class="list-unstyled style" style="float: right">
+                <li class="list-inline-item">
+                  <a href="#">Terms and Conditions of Service</a>
+                </li>
+                <span>&nbsp | &nbsp</span>
+                <li class="list-inline-item">
+                  <a href="#">Terms of Use and Privacy Policy</a>
+                </li>
+                <span>&nbsp | &nbsp</span>
+                <li class="list-inline-item">
+                  <a href="#">Cookies</a>
+                </li>
+                <span>&nbsp | &nbsp</span>
+                <li class="list-inline-item">
+                  <a href="#">Site Map</a>
+                </li>
+                <!-- <span>&nbsp | &nbsp</span> -->
+                <!-- <div class="btn-group dropup">
+                  <div
+                    type=""
+                    class="dropdown-toggle text-light"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <img
+                      src="assets/images/svg/flags/eg- flag.svg"
+                      style="height: 25px"
+                    />
+                    <a href="#">Egypt</a>
+                  </div>
+                  <ul
+                    class="dropdown-menu dropdown-menu-dark"
+                    aria-labelledby="dropdownMenuButton2"
+                  >
+                    <li>
+                      <a class="dropdown-item" href="#">
+                        <img
+                          src="assets/images/svg/flags/sa-flag.svg"
+                          style="height: 25px"
+                        />
+                        Kingdom of Saudi Arabia
+                      </a>
+                    </li>
+
+                    <li>
+                      <a class="dropdown-item" href="#">
+                        <img
+                          src="assets/images/svg/flags/uae-flag.svg"
+                          style="height: 19px"
+                        />
+                        United Arab Emirates</a
+                      >
+                    </li>
+
+                    <li>
+                      <a class="dropdown-item" href="#">
+                        <img
+                          src="assets/images/svg/flags/kw-flag.svg"
+                          style="height: 19px"
+                        />
+                        Kuwait
+                      </a>
+                    </li>
+                  </ul>
+                </div> -->
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+      integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./JS/script.js"></script>
+    
+  </body>
+</html>

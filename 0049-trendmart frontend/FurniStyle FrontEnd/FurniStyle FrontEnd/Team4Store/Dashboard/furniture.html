@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Furniture Management</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .furniture-card {
+            height: 100%;
+            transition: transform 0.2s;
+        }
+        .furniture-card:hover {
+            transform: translateY(-5px);
+        }
+        .furniture-image {
+            height: 200px;
+            object-fit: cover;
+        }
+        .view-toggle {
+            cursor: pointer;
+        }
+        .view-toggle.active {
+            color: #0d6efd;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Sidebar -->
+        <nav id="sidebar" class="bg-dark text-white">
+            <div class="sidebar-header">
+                <h3>Furniture Admin</h3>
+            </div>
+            <ul class="list-unstyled components">
+                <li>
+                    <a href="index.html">
+                        <i class="fas fa-home"></i> Dashboard
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="#furnitureSubmenu" data-bs-toggle="collapse" aria-expanded="true">
+                        <i class="fas fa-couch"></i> Furniture
+                    </a>
+                    <ul class="collapse show list-unstyled" id="furnitureSubmenu">
+                        <li><a href="furniture.html">All Furniture</a></li>
+                        <li><a href="#" data-bs-toggle="modal" data-bs-target="#addFurnitureModal">Add New</a></li>
+                    </ul>
+                </li>
+                <!-- Other menu items -->
+            </ul>
+        </nav>
+
+        <!-- Page Content -->
+        <div id="content">
+            <!-- Top Navigation -->
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                    <button type="button" id="sidebarCollapse" class="btn btn-dark">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div class="ms-auto">
+                        <ul class="navbar-nav">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+                                    <i class="fas fa-user"></i> Admin
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end">
+                                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                                    <li><a class="dropdown-item" href="#">Settings</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="#">Logout</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Main Content -->
+            <div class="container-fluid">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">Furniture List</h5>
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addFurnitureModal">
+                            <i class="fas fa-plus"></i> Add New Furniture
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Image</th>
+                                        <th>Name</th>
+                                        <th>Category</th>
+                                        <th>Room</th>
+                                        <th>Price</th>
+                                        <th>Stock</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="furnitureTableBody">
+                                    <!-- Furniture data will be loaded here dynamically -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Furniture Modal -->
+    <div class="modal fade" id="addFurnitureModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Add New Furniture</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="addFurnitureForm">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Name</label>
+                                <input type="text" class="form-control" name="name" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Category</label>
+                                <select class="form-select" name="categoryName" required id="addCategorySelect">
+                                    <option value="">Select Category</option>
+                                    <!-- Categories will be loaded here -->
+                                </select>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Room</label>
+                                <select class="form-select" name="roomName" required id="addRoomSelect">
+                                    <option value="">Select Room</option>
+                                    <option value="LivingRoom">Living Room</option>
+                                    <option value="Bedroom">Bedroom</option>
+                                    <option value="Kitchen">Kitchen</option>
+                                    <option value="Bathroom">Bathroom</option>
+                                    <option value="Office">Office</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Price</label>
+                                <input type="number" class="form-control" name="price" step="0.01" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Stock</label>
+                                <input type="number" class="form-control" name="stockQuantity" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Image</label>
+                                <input type="text" class="form-control" name="pictureUrl" value="/images/furnis/product_4.jpg" readonly>
+                                <small class="form-text text-muted">Default image path will be used</small>
+                            </div>
+                            <div class="col-12 mb-3">
+                                <label class="form-label">Description</label>
+                                <textarea class="form-control" name="description" rows="3"></textarea>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="handleAddFurniture()">Save Furniture</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Furniture Modal -->
+    <div class="modal fade" id="editFurnitureModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Edit Furniture</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="editFurnitureForm">
+                        <input type="hidden" name="originalName" id="editFurnitureOriginalName">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Name</label>
+                                <input type="text" class="form-control" name="name" id="editFurnitureName" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Category</label>
+                                <select class="form-select" name="categoryName" required id="editCategorySelect">
+                                    <option value="">Select Category</option>
+                                    <!-- Categories will be loaded here -->
+                                </select>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Room</label>
+                                <select class="form-select" name="roomName" required id="editRoomSelect">
+                                    <option value="">Select Room</option>
+                                    <option value="LivingRoom">Living Room</option>
+                                    <option value="Bedroom">Bedroom</option>
+                                    <option value="Kitchen">Kitchen</option>
+                                    <option value="Bathroom">Bathroom</option>
+                                    <option value="Office">Office</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Price</label>
+                                <input type="number" class="form-control" name="price" id="editFurniturePrice" step="0.01" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Stock</label>
+                                <input type="number" class="form-control" name="stockQuantity" id="editFurnitureStock" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Image</label>
+                                <input type="text" class="form-control" name="pictureUrl" id="editImagePath" value="/images/furnis/product_4.jpg" readonly>
+                                <small class="form-text text-muted">Using default image path</small>
+                            </div>
+                            <div class="col-12 mb-3">
+                                <label class="form-label">Description</label>
+                                <textarea class="form-control" name="description" id="editFurnitureDescription" rows="3"></textarea>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="handleUpdateFurniture()">Update Furniture</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Function to load all furniture
+        async function loadFurniture() {
+            try {
+                const response = await fetch("https://furnistyle.runasp.net/api/Furniture/AllFurniture");
+                const furniture = await response.json();
+                const furnitureTableBody = document.getElementById("furnitureTableBody");
+                furnitureTableBody.innerHTML = "";
+
+                furniture.forEach((item) => {
+                    const row = document.createElement("tr");
+                    const imgSrc = item.pictureUrl || "/images/furnis/default.jpg";
+                    
+                    row.innerHTML = `
+                        <td><img src="${imgSrc}" alt="${item.name}" class="img-thumbnail" width="50"></td>
+                        <td>${item.name}</td>
+                        <td>${item.categoryName}</td>
+                        <td>${item.roomName}</td>
+                        <td>$${item.price.toFixed(2)}</td>
+                        <td>${item.stockQuantity}</td>
+                        <td>
+                            <button class="btn btn-warning btn-sm edit-btn">Edit</button>
+                            <button class="btn btn-danger btn-sm delete-btn">Delete</button>
+                        </td>
+                    `;
+
+                    row.querySelector(".edit-btn").addEventListener("click", () => editFurniture(item));
+                    row.querySelector(".delete-btn").addEventListener("click", () => deleteFurniture(item.name));
+
+                    furnitureTableBody.appendChild(row);
+                });
+            } catch (error) {
+                console.error("Error loading Furniture:", error);
+                alert("Failed to load furniture. Please try again later.");
+            }
+        }
+
+        // Function to load categories for dropdowns
+        async function loadCategories() {
+            try {
+                const response = await fetch("https://furnistyle.runasp.net/api/Category/AllCategories");
+                const categories = await response.json();
+                
+                const addCategorySelect = document.getElementById("addCategorySelect");
+                const editCategorySelect = document.getElementById("editCategorySelect");
+                
+                // Clear existing options except the first one
+                addCategorySelect.innerHTML = '<option value="">Select Category</option>';
+                editCategorySelect.innerHTML = '<option value="">Select Category</option>';
+                
+                categories.forEach(category => {
+                    const addOption = document.createElement("option");
+                    addOption.value = category.name;
+                    addOption.textContent = category.name;
+                    addCategorySelect.appendChild(addOption);
+                    
+                    const editOption = document.createElement("option");
+                    editOption.value = category.name;
+                    editOption.textContent = category.name;
+                    editCategorySelect.appendChild(editOption);
+                });
+            } catch (error) {
+                console.error("Error loading Categories:", error);
+                alert("Failed to load categories. Please try again later.");
+            }
+        }
+
+        // Function to edit furniture
+        function editFurniture(furniture) {
+            document.getElementById("editFurnitureOriginalName").value = furniture.name;
+            document.getElementById("editFurnitureName").value = furniture.name;
+            document.getElementById("editFurniturePrice").value = furniture.price;
+            document.getElementById("editFurnitureStock").value = furniture.stockQuantity;
+            document.getElementById("editImagePath").value = "/images/furnis/product_4.jpg"; // Always use default image
+            document.getElementById("editFurnitureDescription").value = furniture.description || "";
+            
+            // Set the dropdown values
+            document.getElementById("editCategorySelect").value = furniture.categoryName;
+            document.getElementById("editRoomSelect").value = furniture.roomName;
+
+            const editModal = new bootstrap.Modal(document.getElementById("editFurnitureModal"));
+            editModal.show();
+        }
+
+        // Function to handle furniture update - FIXED for name update issue
+        async function handleUpdateFurniture() {
+            const form = document.getElementById("editFurnitureForm");
+            const formData = new FormData(form);
+            const originalName = formData.get("originalName");
+            const newName = formData.get("name");
+            
+            // Validate form
+            if (!newName) {
+                alert("Furniture name is required.");
+                return;
+            }
+            
+            // Get auth token
+            const credentialsString = localStorage.getItem("userCredentials");
+            if (!credentialsString) return alert("You must be logged in.");
+
+            let credentials;
+            try {
+                credentials = JSON.parse(credentialsString);
+            } catch {
+                return alert("Invalid credentials.");
+            }
+
+            const token = credentials?.token;
+            const role = credentials?.role;
+
+            if (!token || role !== "Admin") {
+                return alert("Unauthorized - Admin access required.");
+            }
+
+            try {
+                // Prepare furniture data - using the original name in the data object to avoid conflicts
+                let furnitureData = {
+                    name: originalName, // Keep the original name in the data payload
+                    newName: newName,   // Add a newName field for the API to know what to change it to
+                    description: formData.get("description") || "",
+                    price: parseFloat(formData.get("price")),
+                    stockQuantity: parseInt(formData.get("stockQuantity")),
+                    categoryName: formData.get("categoryName"),
+                    roomName: formData.get("roomName"),
+                    pictureUrl: "/images/furnis/product_4.jpg" // Default image
+                };
+                
+                // Add debugging
+                console.log("Updating furniture:", originalName);
+                console.log("Update data:", JSON.stringify(furnitureData));
+                
+                // Make sure we're properly encoding the URL
+                const encodedName = encodeURIComponent(originalName);
+                const updateUrl = `https://furnistyle.runasp.net/api/Furniture/UpdateFurnitureByName/${encodedName}`;
+                
+                console.log("Update URL:", updateUrl);
+                
+                // Update the furniture with the new data
+                const response = await fetch(updateUrl, {
+                    method: "PUT",
+                    headers: {
+                        "Authorization": `Bearer ${token}`,
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(furnitureData)
+                });
+
+                // Log the response for debugging
+                console.log("Update response status:", response.status);
+                const responseText = await response.text();
+                console.log("Response body:", responseText);
+                
+                if (!response.ok) {
+                    throw new Error(`Failed to update furniture: ${responseText || response.statusText}`);
+                }
+
+                alert("Furniture updated successfully!");
+                const editModal = bootstrap.Modal.getInstance(document.getElementById("editFurnitureModal"));
+                if (editModal) editModal.hide();
+
+                loadFurniture();
+            } catch (error) {
+                console.error("Update error:", error);
+                alert("Failed to update furniture: " + error.message);
+            }
+        }
+
+        // Function to delete furniture
+        async function deleteFurniture(name) {
+            if (!confirm(`Are you sure you want to delete the furniture "${name}"?`)) return;
+
+            const credentialsString = localStorage.getItem("userCredentials");
+            if (!credentialsString) return alert("You must be logged in.");
+
+            let credentials;
+            try {
+                credentials = JSON.parse(credentialsString);
+            } catch {
+                return alert("Invalid credentials.");
+            }
+
+            const token = credentials?.token;
+            const role = credentials?.role;
+
+            if (!token || role !== "Admin") {
+                return alert("Unauthorized - Admin access required.");
+            }
+
+            try {
+                const response = await fetch(`https://furnistyle.runasp.net/api/Furniture/DeleteFurnitureByName/${encodeURIComponent(name)}`, {
+                    method: "DELETE",
+                    headers: {
+                        "Authorization": `Bearer ${token}`
+                    }
+                });
+
+                if (!response.ok) throw new Error("Failed to delete furniture");
+
+                alert("Furniture deleted successfully!");
+                loadFurniture();
+            } catch (error) {
+                console.error("Delete error:", error);
+                alert("Failed to delete furniture.");
+            }
+        }
+
+        // Function to handle adding a new furniture
+        async function handleAddFurniture() {
+            const form = document.getElementById("addFurnitureForm");
+            const formData = new FormData(form);
+            
+            // Validate form
+            if (!formData.get("name")) {
+                alert("Furniture name is required.");
+                return;
+            }
+            
+            // Get auth token
+            const credentialsString = localStorage.getItem("userCredentials");
+            if (!credentialsString) {
+                alert("You must be logged in as an Admin to add furniture.");
+                return;
+            }
+
+            let credentials;
+            try {
+                credentials = JSON.parse(credentialsString);
+            } catch (err) {
+                alert("Invalid credentials format.");
+                return;
+            }
+
+            const token = credentials?.token;
+            const role = credentials?.role;
+
+            if (!token || role !== "Admin") {
+                alert("You must be logged in as an Admin to add furniture.");
+                return;
+            }
+
+            try {
+                let furnitureData = {
+                    name: formData.get("name"),
+                    description: formData.get("description"),
+                    price: parseFloat(formData.get("price")),
+                    stockQuantity: parseInt(formData.get("stockQuantity")),
+                    categoryName: formData.get("categoryName"),
+                    roomName: formData.get("roomName"),
+                    pictureUrl: "/images/furnis/product_4.jpg" // Always use default image
+                };
+
+                // Create the furniture with the data
+                const response = await fetch("https://furnistyle.runasp.net/api/Furniture/CreateFurniture", {
+                    method: "POST",
+                    headers: {
+                        "Authorization": `Bearer ${token}`,
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(furnitureData)
+                });
+
+                if (!response.ok) {
+                    const errorText = await response.text();
+                    throw new Error(`Failed to add furniture: ${errorText}`);
+                }
+
+                alert("Furniture added successfully!");
+                const addModal = bootstrap.Modal.getInstance(document.getElementById("addFurnitureModal"));
+                if (addModal) addModal.hide();
+                form.reset();
+                loadFurniture();
+            } catch (error) {
+                console.error("Error adding furniture:", error);
+                alert(`Error adding furniture: ${error.message}`);
+            }
+        }
+
+        // Add sidebar toggle functionality and event listeners
+        document.addEventListener("DOMContentLoaded", function() {
+            const sidebarCollapse = document.getElementById("sidebarCollapse");
+            if (sidebarCollapse) {
+                sidebarCollapse.addEventListener("click", function() {
+                    document.getElementById("sidebar").classList.toggle("active");
+                });
+            }
+            
+            // Initial load
+            loadFurniture();
+            loadCategories();
+        });
+    </script>
+</body>
+</html>

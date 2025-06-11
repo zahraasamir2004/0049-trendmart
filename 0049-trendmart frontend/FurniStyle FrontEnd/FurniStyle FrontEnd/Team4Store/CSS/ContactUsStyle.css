@@ -1,0 +1,8 @@
+@media (max-width: 768px) {
+  .contact-section {
+    background-attachment: scroll !important;
+    background-size: cover !important;
+    height: auto !important;
+    padding: 10px 0 !important;
+  }
+}

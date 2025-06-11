@@ -1,0 +1,26 @@
+# Ignore build artifacts
+bin/
+obj/
+*.dll
+*.exe
+
+# Ignore user-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Ignore VS Code
+.vscode/
+
+# Node.js
+node_modules/
+dist/
+build/
+
+# System
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

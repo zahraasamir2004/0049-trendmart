@@ -1,0 +1,43 @@
+body {
+    background: linear-gradient(45deg, #f3f3f3, #fff);
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+}
+
+.error-template {
+    text-align: center;
+}
+
+.error-title {
+    font-size: 120px;
+    font-weight: bold;
+    color: #dc3545;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    position: relative;
+    animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}
+
+.btn-danger {
+    animation: pulse 2s infinite;
+    box-shadow: 0 0 20px rgba(220, 53, 69, 0.4);
+    transition: all 0.3s ease;
+}
+
+.btn-danger:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px rgba(220, 53, 69, 0.6);
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.4); }
+    70% { box-shadow: 0 0 0 15px rgba(220, 53, 69, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(220, 53, 69, 0); }
+}
+

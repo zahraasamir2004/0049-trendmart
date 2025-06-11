@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Categories Management</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <div class="wrapper d-flex">
+    <!-- Sidebar -->
+    <nav id="sidebar" class="bg-dark text-white p-3" style="min-width: 250px;">
+      <div class="sidebar-header">
+        <h3>Furniture Admin</h3>
+      </div>
+      <ul class="list-unstyled components">
+        <li>
+          <a href="index.html">
+            <i class="fas fa-home"></i> Dashboard
+          </a>
+        </li>
+        <li class="active">
+          <a href="#categoriesSubmenu" data-bs-toggle="collapse" aria-expanded="true">
+            <i class="fas fa-tags"></i> Categories
+          </a>
+          <ul class="collapse show list-unstyled" id="categoriesSubmenu">
+            <li><a href="categories.html">All Categories</a></li>
+            <li><a href="#" data-bs-toggle="modal" data-bs-target="#addCategoryModal">Add New</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Page Content -->
+    <div id="content" class="w-100">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <button type="button" id="sidebarCollapse" class="btn btn-dark">
+            <i class="fas fa-bars"></i>
+          </button>
+          <div class="ms-auto">
+            <ul class="navbar-nav">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+                  <i class="fas fa-user"></i> Admin
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end">
+                  <li><a class="dropdown-item" href="#">Profile</a></li>
+                  <li><a class="dropdown-item" href="#">Settings</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Logout</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <div class="container-fluid">
+        <div class="card">
+          <div class="card-header d-flex justify-content-between align-items-center">
+            <h5 class="mb-0">Categories List</h5>
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addCategoryModal">
+              <i class="fas fa-plus"></i> Add New Category
+            </button>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table table-hover w-100 table-bordered">
+                <thead>
+                  <tr>
+                    <th style="width: 10%;">ID</th>
+                    <th style="width: 70%;">Name</th>
+                    <th style="width: 20%;">Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="categoriesTableBody">
+                  <!-- Categories will be loaded here dynamically -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add Category Modal -->
+  <div class="modal fade" id="addCategoryModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Add New Category</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <form id="addCategoryForm">
+            <div class="mb-3">
+              <label class="form-label">Name</label>
+              <input type="text" class="form-control" name="name" required>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" onclick="handleAddCategory()">Save Category</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Edit Category Modal -->
+  <div class="modal fade" id="editCategoryModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Edit Category</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <form id="editCategoryForm">
+            <input type="hidden" name="originalName" id="editCategoryOriginalName">
+            <div class="mb-3">
+              <label class="form-label">Name</label>
+              <input type="text" class="form-control" name="name" id="editCategoryName" required>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" onclick="handleUpdateCategory()">Update Category</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Function to load all categories
+    async function loadCategories() {
+      try {
+        const response = await fetch("https://furnistyle.runasp.net/api/Category/AllCategories");
+        const categories = await response.json();
+        const categoriesTableBody = document.getElementById("categoriesTableBody");
+        categoriesTableBody.innerHTML = "";
+
+        categories.forEach((category) => {
+          const row = document.createElement("tr");
+          row.innerHTML = `
+            <td>${category.id}</td>
+            <td>${category.name}</td>
+            <td>
+              <button class="btn btn-warning btn-sm edit-btn">Edit</button>
+              <button class="btn btn-danger btn-sm delete-btn">Delete</button>
+            </td>
+          `;
+
+          row.querySelector(".edit-btn").addEventListener("click", () => editCategory(category.name));
+          row.querySelector(".delete-btn").addEventListener("click", () => deleteCategory(category.name));
+
+          categoriesTableBody.appendChild(row);
+        });
+      } catch (error) {
+        console.error("Error loading Categories:", error);
+        alert("Failed to load categories. Please try again later.");
+      }
+    }
+
+    // Function to edit a category
+    function editCategory(name) {
+      // Store the original name directly in the form
+      document.getElementById("editCategoryOriginalName").value = name;
+      document.getElementById("editCategoryName").value = name;
+
+      const editModal = new bootstrap.Modal(document.getElementById("editCategoryModal"));
+      editModal.show();
+    }
+
+    // Function to handle category update
+    async function handleUpdateCategory() {
+      const originalName = document.getElementById("editCategoryOriginalName").value;
+      const newName = document.getElementById("editCategoryName").value.trim();
+
+      if (!newName) {
+        alert("Category name is required.");
+        return;
+      }
+
+      const credentialsString = localStorage.getItem("userCredentials");
+      if (!credentialsString) return alert("You must be logged in.");
+
+      let credentials;
+      try {
+        credentials = JSON.parse(credentialsString);
+      } catch {
+        return alert("Invalid credentials.");
+      }
+
+      const token = credentials?.token;
+      const role = credentials?.role;
+
+      if (!token || role !== "Admin") {
+        return alert("Unauthorized - Admin access required.");
+      }
+
+      try {
+        const response = await fetch(`https://furnistyle.runasp.net/api/Category/UpdateCategory/${encodeURIComponent(originalName)}/${encodeURIComponent(newName)}`, {
+          method: "PUT",
+          headers: {
+            "Authorization": `Bearer ${token}`
+          }
+        });
+
+        if (!response.ok) throw new Error("Failed to update category.");
+
+        alert("Category updated successfully!");
+        const editModal = bootstrap.Modal.getInstance(document.getElementById("editCategoryModal"));
+        if (editModal) editModal.hide();
+
+        loadCategories();
+      } catch (error) {
+        console.error("Update error:", error);
+        alert("Failed to update category.");
+      }
+    }
+
+    // Function to delete a category
+    async function deleteCategory(name) {
+      if (!confirm(`Are you sure you want to delete the category "${name}"?`)) return;
+
+      const credentialsString = localStorage.getItem("userCredentials");
+      if (!credentialsString) return alert("You must be logged in.");
+
+      let credentials;
+      try {
+        credentials = JSON.parse(credentialsString);
+      } catch {
+        return alert("Invalid credentials.");
+      }
+
+      const token = credentials?.token;
+      const role = credentials?.role;
+
+      if (!token || role !== "Admin") {
+        return alert("Unauthorized - Admin access required.");
+      }
+
+      try {
+        const response = await fetch(`https://furnistyle.runasp.net/api/Category/DeleteCategory/${encodeURIComponent(name)}`, {
+          method: "DELETE",
+          headers: {
+            "Authorization": `Bearer ${token}`
+          }
+        });
+
+        if (!response.ok) throw new Error("Failed to delete category");
+
+        alert("Category deleted successfully!");
+        loadCategories();
+      } catch (error) {
+        console.error("Delete error:", error);
+        alert("Failed to delete category.");
+      }
+    }
+
+    // Function to handle adding a new category
+    async function handleAddCategory() {
+      const form = document.getElementById("addCategoryForm");
+      const formData = new FormData(form);
+      const categoryName = formData.get("name").trim();
+
+      if (!categoryName) {
+        alert("Category name is required.");
+        return;
+      }
+
+      const credentialsString = localStorage.getItem("userCredentials");
+
+      if (!credentialsString) {
+        alert("You must be logged in as an Admin to add a category.");
+        return;
+      }
+
+      let credentials;
+      try {
+        credentials = JSON.parse(credentialsString);
+      } catch (err) {
+        alert("Invalid credentials format.");
+        return;
+      }
+
+      const token = credentials?.token;
+      const role = credentials?.role;
+
+      if (!token || role !== "Admin") {
+        alert("You must be logged in as an Admin to add a category.");
+        return;
+      }
+
+      try {
+        const response = await fetch(
+          `https://furnistyle.runasp.net/api/Category/CreateCategory/${encodeURIComponent(categoryName)}`,
+          {
+            method: "POST",
+            headers: {
+              "Authorization": `Bearer ${token}`,
+              "Content-Type": "application/json"
+            },
+          }
+        );
+
+        const responseText = await response.text();
+        let responseData;
+
+        try {
+          responseData = JSON.parse(responseText);
+        } catch {
+          responseData = responseText;
+        }
+
+        if (!response.ok) {
+          throw new Error(`Failed to add Category: ${responseData?.message || responseData || 'Unknown error'}`);
+        }
+
+        alert("Category added successfully!");
+        const addModal = bootstrap.Modal.getInstance(document.getElementById("addCategoryModal"));
+        if (addModal) addModal.hide();
+        form.reset();
+        loadCategories();
+      } catch (error) {
+        console.error("Error adding category:", error);
+        alert(`Error adding Category: ${error.message}`);
+      }
+    }
+
+    // Add sidebar toggle functionality
+    document.addEventListener("DOMContentLoaded", function() {
+      const sidebarCollapse = document.getElementById("sidebarCollapse");
+      if (sidebarCollapse) {
+        sidebarCollapse.addEventListener("click", function() {
+          document.getElementById("sidebar").classList.toggle("active");
+        });
+      }
+      
+      // Initial load of categories
+      loadCategories();
+    });
+  </script>
+</body>
+</html>
